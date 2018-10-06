@@ -1,0 +1,46 @@
+{
+  "name": "react_router_practice",
+  "version": "1.0.0",
+  "description": "This is a react router practice project.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack-dev-server --port 5566 --devtool eval --progress --colors --hot --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LarryCChien/React_Router_Practice.git"
+  },
+  "keywords": [
+    "React",
+    "Reactjs",
+    "React-Router",
+    "JavaScript"
+  ],
+  "author": "Larry.C.Chien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LarryCChien/React_Router_Practice/issues"
+  },
+  "homepage": "https://github.com/LarryCChien/React_Router_Practice#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
