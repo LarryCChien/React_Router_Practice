@@ -27,3 +27,6 @@ const config.devServer = {
     stats: { colors: true },
 };
 ```
+### 20181008  
+IndexRoute 在 react-router v4.0.0 已經移除了。  
+hashHistory 在 react-router v4.0.0 後移至 react-router-dom 中，並改為 HashRouter 。  
