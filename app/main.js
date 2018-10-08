@@ -10,16 +10,6 @@ import Contacts from './components/contacts/contacts';
 import Home from './components/home/home';
 import Products from './components/products/products';
 
-// const Home = () => (
-//     <div>
-//         <h2>Home</h2>
-//     </div>
-// );
-// const About = () => (
-//     <div>
-//         <h2>About</h2>
-//     </div>
-// );
 ReactDOM.render(
     <Router>
         <div>
