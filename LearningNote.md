@@ -27,6 +27,66 @@ const config.devServer = {
     stats: { colors: true },
 };
 ```
+
 ### 20181008  
 IndexRoute 在 react-router v4.0.0 已經移除了。  
-hashHistory 在 react-router v4.0.0 後移至 react-router-dom 中，並改為 HashRouter 。  
+hashHistory 在 react-router v4.0.0 後移至 react-router-dom 中，並改為 HashRouter 。 
+如果要用 import 的方式把其他檔案放在 Router 中，則在該檔案的也要用 `<Router></Router>` 將 React 的元素包起來。  
+如下：  
+`main.js`  
+``` javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+    BrowserRouter as Router, Route,
+} from 'react-router-dom';
+import Header from './components/header/header';
+ReactDOM.render(
+    <Router>
+        <div>
+            <Header />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contacts" component={Contacts} />
+            <Route path="/products" component={Products} />
+        </div>
+    </Router>,
+    document.getElementById('content'),
+);
+```
+**header.js 正確版：**  
+`header.js`  
+``` javascript
+import React from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+// 每頁都要載入的表頭
+const Header = () => (
+    <Router>
+        <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contacts">Contacts</Link></li>
+            <li><Link to="/products">Products</Link></li>
+        </ul>
+    </Router>
+);
+export default Header;
+
+```
+
+**header.js 會報錯版：**  
+`header.js`  
+``` javascript
+import React from 'react';
+import Link from 'react-router-dom';
+// 每頁都要載入的表頭
+const Header = () => (
+    <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contacts">Contacts</Link></li>
+        <li><Link to="/products">Products</Link></li>
+    </ul>
+);
+export default Header;
+```
